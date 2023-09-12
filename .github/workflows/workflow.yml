@@ -16,6 +16,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install docker -y
+        sudo apt-get install net-tools -y
 
     - name: Pull Docker Image
       run: |
@@ -29,3 +30,6 @@ jobs:
   
     - name: Check Docker container Deployment       
       run: docker ps
+
+    - name: View Ipaddress of the runner
+      run: ifconfig
