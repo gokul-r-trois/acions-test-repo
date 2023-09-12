@@ -16,5 +16,22 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install docker -y
-        
+
+    - name: Pull Docker Image
+      run: |
+        docker pull hello-world
+
+    - name: List Docker Images
+      run: docker image ls
+
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List docker images before running hello-world
+      run: docker image ls
+    
+    - name: Deplo Docker conatiner
+      run: docker run --name hello hello-world
   
+    - name: Check Docker container Deployment       
+      run: docker ps
