@@ -25,7 +25,7 @@ jobs:
       run: docker image ls
       
     - name: Deplo Docker conatiner
-      run: docker run --name hello hello-world
+      run: docker run --name hello -d hello-world
   
     - name: Check Docker container Deployment       
       run: docker ps
